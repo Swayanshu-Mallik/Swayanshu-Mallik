@@ -1,4 +1,5 @@
-<div align="center"><img src="assets/banner.svg" width="100%" alt="Swayanshu Mallik — Engineer · Coder · Photographer"/></div>
+
+<div align="center"><img src="assets/banner.svg" width="100%" alt="Swayanshu Mallik — Photographer · Coder · Engineer"/></div>
 
 <table>
 <tr>
@@ -11,13 +12,13 @@
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-
 <table>
 <tr>
 <td width="50%" valign="top">
 
 ### Hi, I'm Swayanshu.
 B.Tech CSE undergraduate (2023–2027) at **Government College of Engineering Kalahandi**, CGPA 7.91.
+
 I build secure, data-driven full-stack apps and AI-powered products — Spring Boot on the backend, React on the front.
 
 <br/>
@@ -34,6 +35,7 @@ I build secure, data-driven full-stack apps and AI-powered products — Spring B
 
 ### Skills
 <img src="https://img.shields.io/badge/Java-393E46?style=flat-square&logo=openjdk&logoColor=DFD0B8" alt="Java"/> <img src="https://img.shields.io/badge/JavaScript-393E46?style=flat-square&logo=javascript&logoColor=DFD0B8" alt="JavaScript"/> <img src="https://img.shields.io/badge/TypeScript-393E46?style=flat-square&logo=typescript&logoColor=DFD0B8" alt="TypeScript"/> <img src="https://img.shields.io/badge/HTML5-393E46?style=flat-square&logo=html5&logoColor=DFD0B8" alt="HTML5"/> <img src="https://img.shields.io/badge/CSS3-393E46?style=flat-square&logo=css3&logoColor=DFD0B8" alt="CSS3"/> <img src="https://img.shields.io/badge/MongoDB-393E46?style=flat-square&logo=mongodb&logoColor=DFD0B8" alt="MongoDB"/> <img src="https://img.shields.io/badge/Docker-393E46?style=flat-square&logo=docker&logoColor=DFD0B8" alt="Docker"/> <img src="https://img.shields.io/badge/Git-393E46?style=flat-square&logo=git&logoColor=DFD0B8" alt="Git"/> <img src="https://img.shields.io/badge/Postman-393E46?style=flat-square&logo=postman&logoColor=DFD0B8" alt="Postman"/> <img src="https://img.shields.io/badge/DSA-393E46?style=flat-square" alt="DSA"/> <img src="https://img.shields.io/badge/OOP-393E46?style=flat-square" alt="OOP"/> <img src="https://img.shields.io/badge/REST_APIs-393E46?style=flat-square" alt="REST APIs"/> <img src="https://img.shields.io/badge/JWT_Auth-393E46?style=flat-square" alt="JWT Auth"/> <img src="https://img.shields.io/badge/DBMS-393E46?style=flat-square" alt="DBMS"/> <img src="https://img.shields.io/badge/OS_%26_Networks-393E46?style=flat-square" alt="OS & Networks"/>
+
 <br/>
 <sub>150+ LeetCode problems solved</sub>
 
@@ -47,6 +49,7 @@ I build secure, data-driven full-stack apps and AI-powered products — Spring B
 </table>
 
 <br/>
+
 <table>
 <tr>
 <td width="33%" align="left"><sub>start</sub></td>
