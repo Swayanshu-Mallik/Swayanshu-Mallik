@@ -1,4 +1,4 @@
-<div align="center"><img src="assets/banner.svg" width="100%" alt="Swayanshu Mallik — Engineer · Builder · Leader"/></div>
+<div align="center"><img src="assets/banner.svg" width="100%" alt="Swayanshu Mallik — Engineer · Coder · Photographer"/></div>
 
 <table>
 <tr>
