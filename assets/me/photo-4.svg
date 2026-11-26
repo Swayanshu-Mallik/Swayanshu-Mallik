@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150" role="img" aria-label="Photo placeholder 4">
+<defs><filter id="b"><feGaussianBlur stdDeviation="16"/></filter></defs>
+<style>.f{stroke-dasharray:6 6;animation:m 6s linear infinite}@keyframes m{to{stroke-dashoffset:-96}}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<rect width="200" height="150" rx="16" fill="#222831"/>
+<circle cx="160" cy="40" r="34" fill="#948979" opacity=".45" filter="url(#b)"/>
+<rect x="3" y="3" width="194" height="144" rx="14" fill="#DFD0B8" fill-opacity=".07" class="f" stroke="#DFD0B8" stroke-opacity=".5" stroke-width="1.2"/>
+<g fill="none" stroke="#DFD0B8" stroke-width="2" stroke-linejoin="round"><rect x="76" y="52" width="48" height="34" rx="6"/><circle cx="100" cy="69" r="9"/><path d="M88 52l4-7h16l4 7"/></g>
+<text x="100" y="112" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="11" fill="#DFD0B8" letter-spacing="2">BEHIND THE CODE</text>
+<text x="100" y="130" text-anchor="middle" font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="9" fill="#948979">photo-4 · replace me</text>
+</svg>

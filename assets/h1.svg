@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" width="220" height="64" role="img" aria-label="ABOUT">
+<defs>
+ <linearGradient id="e" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DFD0B8" stop-opacity=".6"/><stop offset="1" stop-color="#948979" stop-opacity=".25"/></linearGradient>
+ <linearGradient id="s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#DFD0B8" stop-opacity="0"/><stop offset=".5" stop-color="#DFD0B8" stop-opacity=".16"/><stop offset="1" stop-color="#DFD0B8" stop-opacity="0"/></linearGradient>
+ <clipPath id="c"><rect x="2" y="2" width="216" height="60" rx="16"/></clipPath>
+ <filter id="b"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<style>.d{animation:p 2s ease-in-out infinite}@keyframes p{50%{opacity:.25}}@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<rect width="220" height="64" rx="18" fill="#222831"/>
+<circle cx="40" cy="20" r="26" fill="#948979" opacity=".5" filter="url(#b)"/>
+<rect x="2" y="2" width="216" height="60" rx="16" fill="#DFD0B8" fill-opacity=".08" stroke="url(#e)" stroke-width="1.2"/>
+<g clip-path="url(#c)"><rect x="-80" y="0" width="70" height="64" fill="url(#s)" transform="skewX(-20)"><animate attributeName="x" values="-80;260" dur="4.5s" repeatCount="indefinite"/></rect></g>
+<text x="20" y="38" font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="20" font-weight="700" fill="#948979">01</text>
+<text x="58" y="38" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#DFD0B8" letter-spacing="2">ABOUT</text>
+<circle class="d" cx="200" cy="18" r="3.5" fill="#DFD0B8"/>
+<line x1="20" y1="50" x2="60" y2="50" stroke="#948979" stroke-width="2"><animate attributeName="x2" values="20;200;20" dur="5s" repeatCount="indefinite"/></line>
+</svg>

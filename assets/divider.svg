@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 26" width="900" height="26" role="presentation">
+<style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<path id="p" d="M0 13 H330 L345 5 H555 L570 13 H900" fill="none" stroke="#393E46" stroke-width="2"/>
+<path d="M0 13 H330 L345 5 H555 L570 13 H900" fill="none" stroke="#948979" stroke-width="1" stroke-dasharray="2 8" opacity=".7"/>
+<circle r="4" fill="#DFD0B8"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#p"/></animateMotion></circle>
+<circle cx="345" cy="5" r="3" fill="#948979"/><circle cx="555" cy="5" r="3" fill="#948979"/>
+</svg>

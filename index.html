@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swayanshu Mallik · Engineer Portfolio</title>
+<meta name="description" content="Portfolio of Swayanshu Mallik, B.Tech CSE student building full-stack and AI-powered software.">
+<style>
+:root{
+  --bg:#222831; --card:#393E46; --acc:#948979; --txt:#DFD0B8;
+  --glass:rgba(223,208,184,.07); --edge:rgba(223,208,184,.22);
+  --mono:'SFMono-Regular',Consolas,'Courier New',monospace;
+  --sans:'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.55;
+  min-height:100vh;overflow-x:hidden;padding:32px 20px 48px;position:relative;
+}
+/* blueprint grid + floating glass orbs */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background-image:linear-gradient(rgba(57,62,70,.7) 1px,transparent 1px),linear-gradient(90deg,rgba(57,62,70,.7) 1px,transparent 1px);
+  background-size:40px 40px;animation:drift 14s linear infinite;
+}
+@keyframes drift{to{background-position:40px 40px}}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);z-index:-1;animation:float 16s ease-in-out infinite}
+.o1{width:380px;height:380px;background:var(--acc);opacity:.35;top:-80px;left:-60px}
+.o2{width:420px;height:420px;background:var(--txt);opacity:.12;bottom:-120px;right:-80px;animation-delay:-6s}
+.o3{width:260px;height:260px;background:var(--card);opacity:.9;top:40%;left:45%;animation-delay:-3s}
+@keyframes float{50%{transform:translate(50px,40px) scale(1.08)}}
+
+.wrap{max-width:1240px;margin:0 auto}
+.glass{
+  background:var(--glass);border:1px solid var(--edge);border-radius:24px;
+  backdrop-filter:blur(18px) saturate(120%);-webkit-backdrop-filter:blur(18px) saturate(120%);
+  box-shadow:0 12px 40px rgba(0,0,0,.28),inset 0 1px 0 rgba(223,208,184,.18);
+  position:relative;overflow:hidden;
+}
+.glass::after{ /* sheen sweep on hover */
+  content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(223,208,184,.12),transparent);transform:skewX(-20deg);
+  transition:left .9s ease;
+}
+.glass:hover::after{left:140%}
+
+/* hero */
+.hero{padding:44px 48px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.eyebrow{font-family:var(--mono);font-size:.85rem;letter-spacing:.25em;color:var(--acc)}
+h1{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.08em;margin:6px 0 10px}
+.type{font-family:var(--mono);font-size:1.05rem;border-right:2px solid var(--txt);white-space:nowrap;overflow:hidden;width:0;display:inline-block;
+  animation:typing 3.2s steps(40) .4s forwards,caret .8s step-end infinite}
+@keyframes typing{to{width:41ch}}
+@keyframes caret{50%{border-color:transparent}}
+.sub{font-family:var(--mono);font-size:.8rem;color:var(--acc);margin-top:14px}
+.gears{width:150px;height:150px;flex:none}
+.gears svg{width:100%;height:100%;overflow:visible}
+.g1{transform-origin:75px 70px;animation:spin 28s linear infinite}
+.g2{transform-origin:28px 118px;animation:spin 15s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* 4 columns */
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.col{padding:22px;transition:transform .35s ease,border-color .35s,box-shadow .35s;animation:rise .8s ease both}
+.col:nth-child(2){animation-delay:.1s}.col:nth-child(3){animation-delay:.2s}.col:nth-child(4){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.col:hover{transform:translateY(-8px);border-color:var(--acc);box-shadow:0 22px 50px rgba(0,0,0,.4),0 0 0 1px rgba(148,137,121,.4)}
+.tag{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--edge);position:relative}
+.tag::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:36px;background:var(--acc);transition:width .5s}
+.col:hover .tag::after{width:100%}
+.num{font-family:var(--mono);color:var(--acc);font-weight:700;font-size:1.15rem}
+.tag h2{font-size:.95rem;letter-spacing:.22em;font-weight:600}
+h3{font-size:.72rem;letter-spacing:.22em;color:var(--acc);margin:18px 0 8px;font-family:var(--mono);font-weight:600}
+p,li{font-size:.9rem;color:var(--txt);opacity:.9}
+a{color:var(--txt);text-decoration:none}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{
+  font-family:var(--mono);font-size:.72rem;padding:4px 10px;border-radius:999px;
+  background:rgba(57,62,70,.85);border:1px solid var(--edge);transition:all .25s;cursor:default;
+}
+.chip:hover{background:var(--txt);color:var(--bg);transform:translateY(-3px) scale(1.05);border-color:var(--txt)}
+.chip.fw{background:rgba(148,137,121,.28)}
+.links{display:flex;flex-direction:column;gap:6px}
+.links a{display:flex;justify-content:space-between;padding:8px 12px;border-radius:12px;border:1px solid var(--edge);font-size:.85rem;transition:all .25s}
+.links a:hover{background:rgba(223,208,184,.12);border-color:var(--acc);transform:translateX(5px)}
+
+.item{padding:12px 14px;margin-bottom:12px;border-radius:16px;border:1px solid transparent;background:rgba(57,62,70,.35);transition:all .3s}
+.item:hover{border-color:var(--acc);background:rgba(57,62,70,.7);transform:translateX(6px)}
+.item b{display:block;font-size:.98rem}
+.item .when{font-family:var(--mono);font-size:.72rem;color:var(--acc);margin:2px 0 6px;display:block}
+.item .stack{font-family:var(--mono);font-size:.72rem;opacity:.8;margin-top:6px}
+.item a.repo{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--acc);border-bottom:1px dashed var(--acc)}
+.item a.repo:hover{color:var(--txt)}
+
+.gallery{display:grid;gap:10px}
+.gallery figure{border-radius:16px;overflow:hidden;position:relative;border:1px solid var(--edge)}
+.gallery img{display:block;width:100%;transition:transform .6s ease,filter .4s}
+.gallery figure:hover img{transform:scale(1.08) rotate(-1deg);filter:saturate(1.15)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:8px 12px;font-family:var(--mono);font-size:.72rem;
+  background:linear-gradient(transparent,rgba(34,40,49,.92));transform:translateY(100%);transition:transform .35s}
+.gallery figure:hover figcaption{transform:none}
+
+footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78rem;letter-spacing:.25em;color:var(--acc)}
+
+@media (max-width:1080px){.cols{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.cols{grid-template-columns:1fr}.hero{padding:28px 22px}.gears{display:none}.type{font-size:.8rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.type{width:auto;border:0}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+
+<div class="wrap">
+  <header class="glass hero">
+    <div>
+      <div class="eyebrow">// ENGINEER · BUILDER · LEADER</div>
+      <h1>SWAYANSHU MALLIK</h1>
+      <span class="type">Full-Stack · Java Spring Boot · React.js</span>
+      <div class="sub">B.Tech CSE '27 · GCE Kalahandi · Puri, Odisha</div>
+    </div>
+    <div class="gears" aria-hidden="true">
+      <svg viewBox="0 0 150 150" fill="none" stroke="#948979" stroke-width="1.5" stroke-linejoin="round">
+        <g class="g1"><polygon id="gr1" fill="rgba(223,208,184,.06)"/><circle cx="75" cy="70" r="20"/><circle cx="75" cy="70" r="4" fill="#948979"/></g>
+        <g class="g2"><polygon id="gr2" fill="rgba(223,208,184,.06)"/><circle cx="28" cy="118" r="9"/></g>
+      </svg>
+    </div>
+  </header>
+
+  <main class="cols">
+    <!-- 01 ABOUT -->
+    <section class="glass col">
+      <div class="tag"><span class="num">01</span><h2>ABOUT</h2></div>
+      <p>Hi, I'm Swayanshu. A B.Tech CSE undergraduate (2023–2027, CGPA 7.91) building secure, data-driven full-stack apps and AI-powered products.</p>
+
+      <h3>CONTACT</h3>
+      <div class="links">
+        <a href="mailto:swayanshumallik49@gmail.com"><span>Email</span><span>↗</span></a>
+        <a href="https://github.com/Swayanshu-Mallik"><span>GitHub</span><span>↗</span></a>
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"><span>LinkedIn</span><span>↗</span></a>
+      </div>
+
+      <h3>SKILLS</h3>
+      <div class="chips">
+        <span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
+        <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">MongoDB</span>
+        <span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Postman</span>
+        <span class="chip">DSA</span><span class="chip">OOP</span><span class="chip">REST APIs</span>
+        <span class="chip">JWT Auth</span><span class="chip">DBMS</span><span class="chip">OS &amp; Networks</span>
+      </div>
+      <p style="margin-top:8px;font-size:.78rem;font-family:var(--mono);color:var(--acc)">150+ LeetCode problems</p>
+
+      <h3>FRAMEWORKS</h3>
+      <div class="chips">
+        <span class="chip fw">Spring Boot</span><span class="chip fw">Spring Security</span>
+        <span class="chip fw">Spring Data MongoDB</span><span class="chip fw">React.js</span>
+        <span class="chip fw">Next.js</span><span class="chip fw">Node.js</span><span class="chip fw">Express.js</span>
+      </div>
+    </section>
+
+    <!-- 02 PROJECTS -->
+    <section class="glass col">
+      <div class="tag"><span class="num">02</span><h2>PROJECTS</h2></div>
+      <div class="item">
+        <b>Happenstance</b><span class="when">Aug – Nov 2026 · AI-assisted networking</span>
+        <p>Similarity-based recommendation engine over 4+ profile attributes; 5+ core modules.</p>
+        <div class="stack">React.js · Spring Boot · MongoDB · Docker · Postman</div>
+        <a class="repo" href="https://github.com/Swayanshu-Mallik/Happenstance_ai">view repo →</a>
+      </div>
+      <div class="item">
+        <b>SecureChat</b><span class="when">Nov – Dec 2025 · E2EE messaging</span>
+        <p>Real-time chat with ECDH P-256 key exchange and AES-256-GCM encryption.</p>
+        <div class="stack">Next.js · React.js · Spring Boot · MongoDB · WebSockets</div>
+        <a class="repo" href="https://github.com/Swayanshu-Mallik/static-website">view repo →</a>
+      </div>
+      <div class="item">
+        <b>SEMAS</b><span class="when">Feb – May 2026 · Security monitoring</span>
+        <p>Multi-source log ingestion, threat prioritization and event correlation.</p>
+        <!-- TODO: replace with your real SEMAS tech stack -->
+        <div class="stack">Log ingestion · Rule-based detection · RBAC dashboard</div>
+        <a class="repo" href="https://github.com/Swayanshu-Mallik/SEMAS">view repo →</a>
+      </div>
+      <div class="item">
+        <b>Sprout Social</b><span class="when">Jul – Aug 2026 · NoviTech R&amp;D (Internship)</span>
+        <p>Influencer analytics dashboards for 5+ metrics with AI-driven recommendations.</p>
+        <div class="stack">React.js · Node.js · Express.js · MongoDB · LLM API</div>
+      </div>
+    </section>
+
+    <!-- 03 LEADERSHIP -->
+    <section class="glass col">
+      <div class="tag"><span class="num">03</span><h2>LEADERSHIP</h2></div>
+      <div class="item">
+        <b>Chief Coordinator</b><span class="when">Photography Club</span>
+        <p>Instructed 3 workshops for 50–70 students and organized 2 intra-college photography competitions.</p>
+      </div>
+      <div class="item">
+        <b>Design Lead</b><span class="when">Quasar · 2025 &amp; 2026</span>
+        <p>Led the design team behind a 150+ page annual college magazine in print and digital.</p>
+      </div>
+      <div class="item">
+        <b>Event Photographer</b><span class="when">ICICA 2026 · CISPSSE 2026 · Insprano · Awahaan · Anugoonj</span>
+        <p>8,000+ photographs of international conferences and college fests.</p>
+      </div>
+    </section>
+
+    <!-- 04 ME -->
+    <section class="glass col">
+      <div class="tag"><span class="num">04</span><h2>ME</h2></div>
+      <p style="margin-bottom:14px">What I do: write software, lead teams and photograph people, places and events.</p>
+      <!-- Replace the .svg files in assets/me/ with your photos (e.g. photo-1.jpg) and update the src below. -->
+      <div class="gallery">
+        <figure><img src="assets/me/photo-1.svg" alt="Photography"><figcaption>Photography</figcaption></figure>
+        <figure><img src="assets/me/photo-2.svg" alt="Design"><figcaption>Design</figcaption></figure>
+        <figure><img src="assets/me/photo-3.svg" alt="Events"><figcaption>Events</figcaption></figure>
+        <figure><img src="assets/me/photo-4.svg" alt="Behind the code"><figcaption>Behind the code</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>DESIGN · BUILD · SHIP · REPEAT</footer>
+</div>
+
+<script>
+// build gear outlines
+function gear(cx,cy,ro,ri,n){const w=2*Math.PI/n,p=[];for(let i=0;i<n;i++){const a=i*w;
+  [[ri,-.36],[ro,-.2],[ro,.2],[ri,.36]].forEach(([r,o])=>p.push((cx+r*Math.cos(a+o*w)).toFixed(1)+","+(cy+r*Math.sin(a+o*w)).toFixed(1)))}return p.join(" ")}
+document.getElementById("gr1").setAttribute("points",gear(75,70,58,47,14));
+document.getElementById("gr2").setAttribute("points",gear(28,118,26,19,9));
+</script>
+</body>
+</html>

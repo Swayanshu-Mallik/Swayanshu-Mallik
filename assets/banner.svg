@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" role="img" aria-label="Swayanshu Mallik - Engineer portfolio banner">
+<defs>
+ <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+  <path d="M40 0H0V40" fill="none" stroke="#393E46" stroke-width="1"/>
+  <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="40 40" dur="10s" repeatCount="indefinite"/>
+ </pattern>
+ <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="38"/></filter>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#DFD0B8" stop-opacity=".55"/><stop offset=".5" stop-color="#DFD0B8" stop-opacity=".08"/><stop offset="1" stop-color="#948979" stop-opacity=".45"/>
+ </linearGradient>
+ <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#DFD0B8" stop-opacity="0"/><stop offset=".5" stop-color="#DFD0B8" stop-opacity=".10"/><stop offset="1" stop-color="#DFD0B8" stop-opacity="0"/>
+ </linearGradient>
+ <clipPath id="panel"><rect x="30" y="30" width="840" height="260" rx="26"/></clipPath>
+</defs>
+<style>
+ .r{opacity:0;animation:cyc 9s infinite} .r2{animation-delay:3s} .r3{animation-delay:6s}
+ @keyframes cyc{0%{opacity:0;transform:translateY(10px)}5%,28%{opacity:1;transform:translateY(0)}33%,100%{opacity:0;transform:translateY(-10px)}}
+ .cur{animation:blink 1s steps(1) infinite} @keyframes blink{50%{opacity:0}}
+ .pulse{stroke-dasharray:14 190;animation:flow 4s linear infinite} @keyframes flow{to{stroke-dashoffset:-408}}
+ @media (prefers-reduced-motion: reduce){*{animation:none!important} .r1{opacity:1}}
+</style>
+<rect width="900" height="320" rx="30" fill="#222831"/>
+<rect width="900" height="320" rx="30" fill="url(#grid)" opacity=".55"/>
+<circle cx="170" cy="90" r="95" fill="#948979" opacity=".40" filter="url(#blur)"><animate attributeName="cx" values="170;260;170" dur="12s" repeatCount="indefinite"/><animate attributeName="cy" values="90;130;90" dur="12s" repeatCount="indefinite"/></circle>
+<circle cx="760" cy="250" r="110" fill="#DFD0B8" opacity=".16" filter="url(#blur)"><animate attributeName="cx" values="760;690;760" dur="14s" repeatCount="indefinite"/></circle>
+<circle cx="520" cy="40" r="70" fill="#393E46" opacity=".9" filter="url(#blur)"/>
+<rect x="30" y="30" width="840" height="260" rx="26" fill="#DFD0B8" fill-opacity=".07" stroke="url(#edge)" stroke-width="1.4"/>
+<g clip-path="url(#panel)"><rect x="-300" y="30" width="260" height="260" fill="url(#sheen)" transform="skewX(-20)"><animate attributeName="x" values="-300;1100" dur="7s" repeatCount="indefinite"/></rect></g>
+<g fill="none" stroke="#948979" stroke-width="1.5" opacity=".9" stroke-linejoin="round">
+ <polygon points="799.2,140.3 813.7,143.4 813.7,156.6 799.2,159.7 797.5,167.0 809.3,176.0 803.5,188.0 789.2,184.4 784.5,190.3 791.1,203.5 780.8,211.8 769.4,202.3 762.6,205.6 762.9,220.4 749.9,223.3 743.8,209.9 736.2,209.9 730.1,223.3 717.1,220.4 717.4,205.6 710.6,202.3 699.2,211.8 688.9,203.5 695.5,190.3 690.8,184.4 676.5,188.0 670.7,176.0 682.5,167.0 680.8,159.7 666.3,156.6 666.3,143.4 680.8,140.3 682.5,133.0 670.7,124.0 676.5,112.0 690.8,115.6 695.5,109.7 688.9,96.5 699.2,88.2 710.6,97.7 717.4,94.4 717.1,79.6 730.1,76.7 736.2,90.1 743.8,90.1 749.9,76.7 762.9,79.6 762.6,94.4 769.4,97.7 780.8,88.2 791.1,96.5 784.5,109.7 789.2,115.6 803.5,112.0 809.3,124.0 797.5,133.0" fill="#DFD0B8" fill-opacity=".05"><animateTransform attributeName="transform" type="rotate" from="0 740 150" to="360 740 150" dur="28s" repeatCount="indefinite"/></polygon>
+ <circle cx="740" cy="150" r="24"/><circle cx="740" cy="150" r="5" fill="#948979"/>
+ <polygon points="685.0,224.3 694.6,226.4 694.6,237.6 685.0,239.7 683.0,245.4 688.9,253.2 681.8,261.7 673.0,257.2 667.8,260.2 667.4,270.0 656.4,272.0 652.6,262.9 646.7,261.9 640.0,269.1 630.4,263.5 633.3,254.1 629.4,249.5 619.7,250.8 615.9,240.3 624.1,235.0 624.1,229.0 615.9,223.7 619.7,213.2 629.4,214.5 633.3,209.9 630.4,200.5 640.0,194.9 646.7,202.1 652.6,201.1 656.4,192.0 667.4,194.0 667.8,203.8 673.0,206.8 681.8,202.3 688.9,210.8 683.0,218.6" fill="#DFD0B8" fill-opacity=".05"><animateTransform attributeName="transform" type="rotate" from="360 655 232" to="0 655 232" dur="15s" repeatCount="indefinite"/></polygon>
+ <circle cx="655" cy="232" r="11"/>
+</g>
+<text x="70" y="88" font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="14" fill="#948979" letter-spacing="3">// ENGINEER · BUILDER · LEADER</text>
+<text x="68" y="150" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="46" font-weight="700" fill="#DFD0B8" letter-spacing="3">SWAYANSHU MALLIK</text>
+<line x1="70" y1="170" x2="250" y2="170" stroke="#948979" stroke-width="2"><animate attributeName="x2" values="70;420;70" dur="6s" repeatCount="indefinite"/></line>
+<g font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="19" fill="#DFD0B8">
+ <text class="r r1" x="70" y="213">Full-Stack · Java Spring Boot · React.js</text>
+ <text class="r r2" x="70" y="213">LLM &amp; AI Integration · REST APIs</text>
+ <text class="r r3" x="70" y="213">Secure systems · E2EE · RBAC</text>
+</g>
+<text x="70" y="256" font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="13" fill="#948979">B.Tech CSE '27 · GCE Kalahandi · Puri, Odisha<tspan class="cur" fill="#DFD0B8"> ▍</tspan></text>
+<path class="pulse" d="M30 304 H300 L324 290 H576 L600 304 H870" fill="none" stroke="#DFD0B8" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M30 304 H300 L324 290 H576 L600 304 H870" fill="none" stroke="#948979" stroke-width="1" opacity=".5"/>
+</svg>
