@@ -61,11 +61,28 @@ h1{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.08em;margin:6px 0 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* 4 columns */
-.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.col{padding:22px;transition:transform .35s ease,border-color .35s,box-shadow .35s;animation:rise .8s ease both}
-.col:nth-child(2){animation-delay:.1s}.col:nth-child(3){animation-delay:.2s}.col:nth-child(4){animation-delay:.3s}
-@keyframes rise{from{opacity:0;transform:translateY(24px)}}
-.col:hover{transform:translateY(-8px);border-color:var(--acc);box-shadow:0 22px 50px rgba(0,0,0,.4),0 0 0 1px rgba(148,137,121,.4)}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 20px;padding:8px;max-width:760px;border-radius:999px}
+.tab{appearance:none;border:1px solid transparent;background:transparent;color:var(--txt);font:600 .8rem var(--mono);letter-spacing:.18em;
+  padding:11px 20px;border-radius:999px;cursor:pointer;transition:all .3s;position:relative;opacity:.75}
+.tab span{color:var(--acc);margin-right:8px}
+.tab:hover{opacity:1;background:rgba(223,208,184,.1);transform:translateY(-2px)}
+.tab[aria-selected=true]{opacity:1;background:rgba(148,137,121,.35);border-color:var(--txt);box-shadow:0 0 22px rgba(148,137,121,.35)}
+.stage{max-width:900px;margin:0 auto}
+.col{display:none}
+.col.active{display:block;animation:pagein .55s cubic-bezier(.2,.8,.2,1) both}
+.col.active.back{animation-name:pageback}
+@keyframes pagein{from{opacity:0;transform:translateX(60px) scale(.98)}}
+@keyframes pageback{from{opacity:0;transform:translateX(-60px) scale(.98)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pager{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:16px;border-top:1px solid var(--edge)}
+.pager button{appearance:none;background:rgba(223,208,184,.07);border:1px solid var(--edge);color:var(--txt);font:600 .78rem var(--mono);letter-spacing:.15em;
+  padding:10px 18px;border-radius:999px;cursor:pointer;transition:all .25s}
+.pager button:hover{background:var(--txt);color:var(--bg);transform:translateY(-2px)}
+.pager button[disabled]{opacity:.25;pointer-events:none}
+.count{font-family:var(--mono);font-size:.75rem;color:var(--acc);letter-spacing:.2em}
+.gallery{grid-template-columns:1fr 1fr}
+.col{padding:30px;transition:border-color .35s,box-shadow .35s;min-height:420px}
+.col:hover{border-color:var(--acc);box-shadow:0 22px 50px rgba(0,0,0,.4),0 0 0 1px rgba(148,137,121,.4)}
 .tag{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--edge);position:relative}
 .tag::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:36px;background:var(--acc);transition:width .5s}
 .col:hover .tag::after{width:100%}
@@ -104,8 +121,7 @@ a{color:var(--txt);text-decoration:none}
 
 footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78rem;letter-spacing:.25em;color:var(--acc)}
 
-@media (max-width:1080px){.cols{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:620px){.cols{grid-template-columns:1fr}.hero{padding:28px 22px}.gears{display:none}.type{font-size:.8rem}}
+@media (max-width:620px){.two,.gallery{grid-template-columns:1fr}.tab{padding:9px 12px;font-size:.7rem;letter-spacing:.1em}.hero{padding:28px 22px}.gears{display:none}.type{font-size:.8rem}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.type{width:auto;border:0}}
 </style>
 </head>
@@ -128,12 +144,20 @@ footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78re
     </div>
   </header>
 
-  <main class="cols">
+  <nav class="tabs glass" role="tablist" aria-label="Portfolio pages">
+    <button class="tab" role="tab" data-i="0"><span>01</span>ABOUT</button>
+    <button class="tab" role="tab" data-i="1"><span>02</span>PROJECTS</button>
+    <button class="tab" role="tab" data-i="2"><span>03</span>LEADERSHIP</button>
+    <button class="tab" role="tab" data-i="3"><span>04</span>ME</button>
+  </nav>
+
+  <main class="stage">
     <!-- 01 ABOUT -->
-    <section class="glass col">
+    <section class="glass col" role="tabpanel">
       <div class="tag"><span class="num">01</span><h2>ABOUT</h2></div>
       <p>Hi, I'm Swayanshu. A B.Tech CSE undergraduate (2023–2027, CGPA 7.91) building secure, data-driven full-stack apps and AI-powered products.</p>
 
+      <div class="two"><div>
       <h3>CONTACT</h3>
       <div class="links">
         <a href="mailto:swayanshumallik49@gmail.com"><span>Email</span><span>↗</span></a>
@@ -141,6 +165,7 @@ footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78re
         <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"><span>LinkedIn</span><span>↗</span></a>
       </div>
 
+      </div><div>
       <h3>SKILLS</h3>
       <div class="chips">
         <span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
@@ -156,11 +181,11 @@ footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78re
         <span class="chip fw">Spring Boot</span><span class="chip fw">Spring Security</span>
         <span class="chip fw">Spring Data MongoDB</span><span class="chip fw">React.js</span>
         <span class="chip fw">Next.js</span><span class="chip fw">Node.js</span><span class="chip fw">Express.js</span>
-      </div>
+      </div></div></div>
     </section>
 
     <!-- 02 PROJECTS -->
-    <section class="glass col">
+    <section class="glass col" role="tabpanel">
       <div class="tag"><span class="num">02</span><h2>PROJECTS</h2></div>
       <div class="item">
         <b>Happenstance</b><span class="when">Aug – Nov 2026 · AI-assisted networking</span>
@@ -189,7 +214,7 @@ footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78re
     </section>
 
     <!-- 03 LEADERSHIP -->
-    <section class="glass col">
+    <section class="glass col" role="tabpanel">
       <div class="tag"><span class="num">03</span><h2>LEADERSHIP</h2></div>
       <div class="item">
         <b>Chief Coordinator</b><span class="when">Photography Club</span>
@@ -206,7 +231,7 @@ footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78re
     </section>
 
     <!-- 04 ME -->
-    <section class="glass col">
+    <section class="glass col" role="tabpanel">
       <div class="tag"><span class="num">04</span><h2>ME</h2></div>
       <p style="margin-bottom:14px">What I do: write software, lead teams and photograph people, places and events.</p>
       <!-- Replace the .svg files in assets/me/ with your photos (e.g. photo-1.jpg) and update the src below. -->
@@ -223,6 +248,30 @@ footer{text-align:center;margin-top:34px;font-family:var(--mono);font-size:.78re
 </div>
 
 <script>
+(function(){
+  const panels=[...document.querySelectorAll('.col')], tabs=[...document.querySelectorAll('.tab')];
+  const names=['about','projects','leadership','me']; let cur=0;
+  panels.forEach((p,i)=>{
+    const d=document.createElement('div'); d.className='pager';
+    d.innerHTML='<button data-d="-1">← PREV</button><span class="count">PAGE '+(i+1)+' / '+panels.length+'</span><button data-d="1">NEXT →</button>';
+    p.appendChild(d);
+    d.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>go(i+ +b.dataset.d)));
+    if(i===0) d.firstChild.disabled=true; if(i===panels.length-1) d.lastChild.disabled=true;
+  });
+  function go(n,first){
+    if(n<0||n>=panels.length) return;
+    const back=n<cur; cur=n;
+    panels.forEach((p,i)=>{p.classList.remove('active','back'); if(i===n){void p.offsetWidth;p.classList.add('active'); if(back&&!first)p.classList.add('back');}});
+    tabs.forEach((t,i)=>t.setAttribute('aria-selected',i===n));
+    try{history.replaceState(null,'','#'+names[n])}catch(e){}
+    if(!first) window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>go(i)));
+  addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1); if(e.key==='ArrowLeft')go(cur-1)});
+  let x0=null; addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>70)go(cur+(dx<0?1:-1)); x0=null});
+  const h=names.indexOf(location.hash.slice(1)); go(h>=0?h:0,true);
+})();
 // build gear outlines
 function gear(cx,cy,ro,ri,n){const w=2*Math.PI/n,p=[];for(let i=0;i<n;i++){const a=i*w;
   [[ri,-.36],[ro,-.2],[ro,.2],[ri,.36]].forEach(([r,o])=>p.push((cx+r*Math.cos(a+o*w)).toFixed(1)+","+(cy+r*Math.sin(a+o*w)).toFixed(1)))}return p.join(" ")}

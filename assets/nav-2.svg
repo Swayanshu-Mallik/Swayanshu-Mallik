@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 46" width="200" height="46" role="img" aria-label="PROJECTS">
+<style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>
+<rect width="200" height="46" rx="14" fill="#222831"/>
+<rect x="1.5" y="1.5" width="197" height="43" rx="13" fill="#DFD0B8" fill-opacity=".06" stroke="#DFD0B8" stroke-opacity=".22" stroke-width="1.2"/>
+<text x="16" y="28" font-family="'SFMono-Regular', Consolas, 'Courier New', monospace" font-size="14" font-weight="700" fill="#948979">02</text>
+<text x="46" y="28" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" fill="#948979" letter-spacing="2">PROJECTS</text>
+
+</svg>
